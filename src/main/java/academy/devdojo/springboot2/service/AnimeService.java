@@ -34,6 +34,7 @@ public class AnimeService {
 
     @Transactional
     public Anime save(AnimePostRequestBody animePostRequestBody) {
+
         return animeRepository.save(AnimeMapper.INTANCE.toAnime(animePostRequestBody));
     }
 
