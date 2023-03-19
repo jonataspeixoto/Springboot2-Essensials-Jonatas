@@ -1,6 +1,5 @@
 package academy.devdojo.springboot2.controller;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
@@ -21,7 +20,6 @@ import academy.devdojo.springboot2.domain.Anime;
 import academy.devdojo.springboot2.requests.AnimePostRequestBody;
 import academy.devdojo.springboot2.requests.AnimePutRequestBody;
 import academy.devdojo.springboot2.service.AnimeService;
-import academy.devdojo.springboot2.util.DateUtil;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -52,7 +50,7 @@ public class AnimeController {
     }
 
     @GetMapping(path = "/find")
-    public ResponseEntity<List<Anime>> findById(@RequestParam String name) {
+    public ResponseEntity<List<Anime>> findByName(@RequestParam String name) {
         return ResponseEntity.ok(animeService.findByName(name));
     }
 
