@@ -37,6 +37,8 @@ public class SecurityConfig {
 //                .csrfTokenRepository(tokenRepository)
 //                .csrfTokenRequestHandler(requestHandler)
 //            )
+            .formLogin()
+            .and()
             .httpBasic();
         return http.build();
     }
