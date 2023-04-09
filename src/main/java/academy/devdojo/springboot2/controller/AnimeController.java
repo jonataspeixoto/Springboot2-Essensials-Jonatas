@@ -31,7 +31,7 @@ import lombok.extern.log4j.Log4j2;
 @RestController
 @RequestMapping("animes")
 @Log4j2
-@RequiredArgsConstructorgit
+@RequiredArgsConstructor
 public class AnimeController {
     private final AnimeService animeService;
 
