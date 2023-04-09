@@ -36,6 +36,8 @@ public class SecurityConfig {
             .csrf()
             .disable()
             .authorizeHttpRequests((authz) -> authz
+                .requestMatchers("/animes/admin/**").hasRole("ADMIN")
+                .requestMatchers("/animes/**").hasRole("USER")
                 .anyRequest()
                 .authenticated()
             )

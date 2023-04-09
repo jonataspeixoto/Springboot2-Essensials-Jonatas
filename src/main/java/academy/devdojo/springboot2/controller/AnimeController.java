@@ -31,8 +31,7 @@ import lombok.extern.log4j.Log4j2;
 @RestController
 @RequestMapping("animes")
 @Log4j2
-@RequiredArgsConstructor
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+@RequiredArgsConstructorgit
 public class AnimeController {
     private final AnimeService animeService;
 
@@ -64,12 +63,11 @@ public class AnimeController {
     }
 
     @PostMapping
-    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Anime> save(@RequestBody @Valid AnimePostRequestBody animePostRequestBody) {
         return new ResponseEntity<>(animeService.save(animePostRequestBody), HttpStatus.CREATED);
     }
 
-    @DeleteMapping(path = "/{id}")
+    @DeleteMapping(path = "/admin/{id}")
     public ResponseEntity<Void> delete(@PathVariable long id) {
         animeService.delete(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
