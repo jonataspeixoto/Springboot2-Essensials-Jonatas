@@ -17,3 +17,16 @@ logging:
       hibernate:
         SQL: debug
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics
+  info:
+    env:
+      enabled: true
+
+info:
+  app: "Spring Boot 2 Essentials By DevDojo"
+  website: "https://devdojo.academy"
+  github: "https://github.com/jonataspeixoto/springboot2-essentials"
