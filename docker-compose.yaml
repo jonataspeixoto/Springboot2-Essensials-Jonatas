@@ -10,5 +10,15 @@ services:
     volumes:
     - devdojo_data:/var/lib/mysql
 
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    volumes:
+    - "./src/main/resources/prometeus.yaml:/etc/prometheus/prometeus.yaml"
+    command:
+    - "--config.file=/etc/prometheus/prometeus.yaml"
+    ports:
+    - "9090:9090"
+
 volumes:
   devdojo_data:
